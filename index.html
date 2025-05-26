@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Game // Access Portal</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 2rem;
+    }
+    .console {
+      background-color: #111;
+      border: 1px solid #444;
+      padding: 1rem;
+      margin-bottom: 2rem;
+    }
+    .log {
+      white-space: pre-wrap;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .puzzle {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #90ee90;
+    }
+    .hidden {
+      display: none;
+    }
+    input {
+      background-color: #000;
+      color: #0f0;
+      border: 1px solid #333;
+      padding: 0.5rem;
+      font-family: inherit;
+      font-size: 1rem;
+      width: 100%;
+    }
+    .level {
+      display: none;
+      margin-top: 2rem;
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      padding: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>// The Game // Access Portal</h1>
+  <div class="console">
+    <div class="log">
+      > Connection established...<br>
+      > Initializing memory trace...<br>
+      > Welcome, PLAYER: Venta<br>
+      > Memory Layer: Level 3<br>
+      > Chave: IVY // Porta: HOLLOW<br><br>
+      > Next prompt: "Find the Sound of What Was Never Said."
+    </div>
+    <div class="puzzle">
+      🔐 Puzzle: Enter a 5-letter word that is never spoken, only echoed...
+    </div>
+    <input type="text" placeholder="Enter code" id="codeInput" onkeydown="checkCode(event)">
+    <div id="response" class="log hidden"></div>
+  </div>
+
+  <div id="nvl4" class="level">
+    <div class="log">
+      > Nvl4 Accessed.<br>
+      > Codename: Venta<br>
+      > Location: Forgotten Embassy [REDACTED]<br><br>
+      Attached files detected:<br>
+      - 📄 Email fragment from "Eidolon" (status: corrupted)<br>
+      - 📰 Newspaper clipping: *Queen’s Mirror Missing*<br>
+      - 🖼️ Recovered Image File: "obscura-13.jpg"<br><br>
+      > Instructions: Click on each to decode layer truth.
+    </div>
+  </div>
+
+  <script>
+    function checkCode(event) {
+      if (event.key === 'Enter') {
+        const code = event.target.value.toLowerCase().trim();
+        const response = document.getElementById('response');
+        const nvl4 = document.getElementById('nvl4');
+
+        if (code === 'lapse') {
+          response.innerHTML = '> Access granted...<br>> Memory breach successful.<br>> Nvl4 unlocked. Awaiting further instructions.';
+          response.classList.remove('hidden');
+          nvl4.style.display = 'block';
+        } else {
+          response.innerHTML = '> Incorrect input. Memory echo not found.';
+          response.classList.remove('hidden');
+        }
+      }
+    }
+  </script>
+</body>
+</html>
